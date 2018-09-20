@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Django {% endblock %} 姜戈</title>
+</head>
+<body>
+
+    {% include 'second/nav.html' %}
+
+    {% block content %}
+
+    <div>模板内容 如 content 未覆盖则显示此区域</div>
+
+    {% endblock %}
+
+    {% include 'second/bottom.html' %}
+
+    {% include 'second/foot.html' %}
+
+</body>
+</html>

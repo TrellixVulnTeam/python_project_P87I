@@ -1,0 +1,20 @@
+{% extends 'second/base.html' %}
+{% block title %} Welcome 首页 {% endblock %}
+{% block content %}
+    这里是首页index的正文内容<br>
+    <b>{{ cont }}</b>
+    <p>下面是来自Django的List</p>
+    {% for list in lists %}
+        {% empty %}<p>Sorry,is Empty</p>
+        <p><i>{{ list }}{% if not forloop.last %}，{% endif %}</i></p>
+    {% endfor %}
+    {% for k, v in map.items %}
+        <p><b>{{ k }} --- {{ v }}</b></p>
+    {% endfor %}
+    {% url 'add2' 456 852 %}
+    <h1>数据库hc_user表信息</h1>
+    {% for user in users %}
+        <p>{{ user.id }} : {{ user.user_account }}</p>
+    {% endfor %}
+
+{% endblock %}
